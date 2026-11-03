@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "workforce-corporate-performance-dashboard"
+version = "1.0.0"
+description = "Privacy-conscious workforce analytics with SQL, Excel, and Power BI."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "duckdb>=1.2,<2.0",
+    "XlsxWriter>=3.2,<4.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3,<9.0"]
+
+[project.scripts]
+workforce-dashboard = "workforce_dashboard.pipeline:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

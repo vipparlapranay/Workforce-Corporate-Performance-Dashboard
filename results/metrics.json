@@ -1,0 +1,93 @@
+{
+  "dataset": "Synthetic HR, Workforce and Attrition Database",
+  "source_url": "https://www.kaggle.com/datasets/generaterealdata/synthetic-hr-workforce-attrition",
+  "source_version": 2,
+  "source_license": "CC BY 4.0",
+  "source_credit": "Synthetic HR, Workforce and Attrition, GenerateRealData (CC BY 4.0); https://www.generaterealdata.com",
+  "synthetic_data": true,
+  "contains_real_employee_data": false,
+  "as_of_date": "2026-09-30",
+  "date_range": {
+    "first_month": "2015-01-01",
+    "last_month": "2026-09-01"
+  },
+  "source_row_counts": {
+    "departments": 40,
+    "employees": 20000,
+    "salaries": 45000,
+    "performance_reviews": 60000,
+    "absences": 21760,
+    "attrition_events": 8386
+  },
+  "total_source_rows": 155186,
+  "employee_records": 20000,
+  "active_headcount": 11614,
+  "total_exits": 8386,
+  "observed_cohort_exit_share": 0.4193,
+  "department_count": 40,
+  "office_count": 8,
+  "absence_records": 21760,
+  "absence_days_total": 163698,
+  "trailing_12m_exits": 1324,
+  "trailing_12m_average_headcount": 11255.17,
+  "trailing_12m_turnover_rate": 0.117635,
+  "weighted_12m_retention_rate": 0.900642,
+  "latest_month_turnover_rate": 0.011471620580429758,
+  "latest_month_end_headcount": 11614,
+  "highest_turnover_division_trailing_12m": {
+    "division": "Marketing",
+    "turnover_rate": 0.12843039061382172,
+    "exits": 187
+  },
+  "highest_turnover_department_trailing_12m": {
+    "department": "Product Design",
+    "division": "Product",
+    "turnover_rate": 0.17928902627511592,
+    "exits": 29
+  },
+  "most_common_exit_reason": {
+    "reason": "better_offer",
+    "exits": 2734,
+    "share_of_exits": 0.3260195564035297
+  },
+  "largest_exit_tenure_band": {
+    "band": "2 to under 5 years",
+    "exits": 3801,
+    "share_of_exits": 0.4532554257095159
+  },
+  "data_quality_tests_total": 14,
+  "data_quality_tests_passed": 14,
+  "export_row_counts": {
+    "dim_month": 141,
+    "departments": 40,
+    "monthly_workforce": 141,
+    "department_monthly": 5640,
+    "department_scorecard": 40,
+    "division_scorecard": 8,
+    "absence_monthly": 141,
+    "department_absence_monthly": 5640,
+    "performance_monthly": 141,
+    "department_performance": 40,
+    "attrition_reasons": 7,
+    "exit_tenure_bands": 4,
+    "retention_cohorts": 129
+  },
+  "privacy": "Only aggregate tables are exported. Names, email addresses, dates of birth and employee identifiers are excluded from report files.",
+  "interpretation_caveat": "The source is fully synthetic. Its creator states attrition depends on hire timing/tenure, not performance, pay, level or department. Segment differences are descriptive generator behavior, not causal evidence or findings about a real employer.",
+  "artifacts": [
+    "absence_monthly.csv",
+    "attrition_reasons.csv",
+    "department_absence_monthly.csv",
+    "department_monthly.csv",
+    "department_performance.csv",
+    "department_scorecard.csv",
+    "departments.csv",
+    "dim_month.csv",
+    "division_scorecard.csv",
+    "exit_tenure_bands.csv",
+    "monthly_workforce.csv",
+    "performance_monthly.csv",
+    "retention_cohorts.csv",
+    "workforce_executive_dashboard.xlsx"
+  ]
+}

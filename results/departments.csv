@@ -1,0 +1,41 @@
+﻿department_id,department_name,division,location
+30,Accounting,Finance,Bengaluru
+32,Financial Planning,Finance,Austin
+34,Internal Audit,Finance,New York
+31,Payroll,Finance,Sydney
+33,Tax,Finance,Toronto
+40,Compliance,Legal,Austin
+39,Legal,Legal,Sydney
+19,Brand Marketing,Marketing,Dublin
+21,Content,Marketing,London
+22,Events,Marketing,Bengaluru
+20,Growth Marketing,Marketing,Chicago
+23,Product Marketing,Marketing,Sydney
+25,Customer Success,Operations,Toronto
+24,Customer Support,Operations,Austin
+29,Facilities,Operations,London
+27,Logistics,Operations,Dublin
+28,Procurement,Operations,Chicago
+26,Professional Services,Operations,New York
+38,Compensation & Benefits,People,Bengaluru
+37,Learning & Development,People,London
+36,People Operations,People,Chicago
+35,Talent Acquisition,People,Dublin
+10,Product Design,Product,New York
+9,Product Management,Product,Toronto
+12,Technical Writing,Product,Chicago
+11,User Research,Product,Dublin
+13,Enterprise Sales,Sales,London
+14,Mid-Market Sales,Sales,Bengaluru
+18,Partnerships,Sales,New York
+15,SMB Sales,Sales,Sydney
+16,Sales Development,Sales,Austin
+17,Sales Operations,Sales,Toronto
+2,Data Science,Technology,New York
+8,IT Support,Technology,Austin
+5,Infrastructure,Technology,London
+3,Mobile Engineering,Technology,Dublin
+1,Platform Engineering,Technology,Toronto
+7,Quality Assurance,Technology,Sydney
+6,Security Engineering,Technology,Bengaluru
+4,Web Engineering,Technology,Chicago

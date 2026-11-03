@@ -1,0 +1,99 @@
+-- Import the aggregate CSV files from results\ and create the relationships
+-- described in powerbi\README.md before adding these measures.
+
+Active Headcount =
+CALCULATE (
+    MAX ( MonthlyWorkforce[ending_headcount] ),
+    LASTDATE ( DimMonth[month_start] )
+)
+
+Beginning Headcount =
+MAX ( MonthlyWorkforce[starting_headcount] )
+
+Average Headcount =
+AVERAGE ( MonthlyWorkforce[average_headcount] )
+
+Hires =
+SUM ( MonthlyWorkforce[hires] )
+
+Exits =
+SUM ( MonthlyWorkforce[exits] )
+
+Turnover Rate (Selected Period) =
+DIVIDE ( [Exits], [Average Headcount] )
+
+Turnover Target (Illustrative) =
+0.012
+
+Turnover Target Gap =
+[Turnover Rate (Selected Period)] - [Turnover Target (Illustrative)]
+
+Opening Cohort Retention =
+DIVIDE (
+    SUM ( MonthlyWorkforce[retained_from_opening_cohort] ),
+    SUM ( MonthlyWorkforce[starting_headcount] )
+)
+
+Trailing 12M Exits =
+VAR EndMonth = MAX ( DimMonth[month_start] )
+VAR TwelveMonths =
+    DATESBETWEEN ( DimMonth[month_start], EDATE ( EndMonth, -11 ), EndMonth )
+RETURN
+    CALCULATE ( [Exits], TwelveMonths )
+
+Trailing 12M Average Headcount =
+VAR EndMonth = MAX ( DimMonth[month_start] )
+VAR TwelveMonths =
+    DATESBETWEEN ( DimMonth[month_start], EDATE ( EndMonth, -11 ), EndMonth )
+RETURN
+    CALCULATE ( [Average Headcount], TwelveMonths )
+
+Trailing 12M Turnover =
+DIVIDE ( [Trailing 12M Exits], [Trailing 12M Average Headcount] )
+
+Absence Days =
+SUM ( AbsenceMonthly[absence_days] )
+
+Absence Days per Active Employee =
+DIVIDE ( [Absence Days], [Average Headcount] )
+
+Completed Reviews =
+SUM ( PerformanceMonthly[completed_reviews] )
+
+Average Review Rating =
+DIVIDE (
+    SUMX (
+        PerformanceMonthly,
+        PerformanceMonthly[average_rating] * PerformanceMonthly[completed_reviews]
+    ),
+    [Completed Reviews]
+)
+
+Average Goals Met =
+DIVIDE (
+    SUMX (
+        PerformanceMonthly,
+        PerformanceMonthly[average_goals_met_pct]
+            * PerformanceMonthly[completed_reviews]
+    ),
+    [Completed Reviews] * 100
+)
+
+Department Turnover (Selected Period) =
+DIVIDE (
+    SUM ( DepartmentMonthly[exits] ),
+    AVERAGE ( DepartmentMonthly[average_headcount] )
+)
+
+Department Trailing 12M Turnover =
+VAR EndMonth = MAX ( DimMonth[month_start] )
+VAR TwelveMonths =
+    DATESBETWEEN ( DimMonth[month_start], EDATE ( EndMonth, -11 ), EndMonth )
+RETURN
+    CALCULATE ( [Department Turnover (Selected Period)], TwelveMonths )
+
+Cohort Retention 12M =
+DIVIDE (
+    SUM ( RetentionCohorts[retained_after_12_months] ),
+    SUM ( RetentionCohorts[eligible_employees] )
+)

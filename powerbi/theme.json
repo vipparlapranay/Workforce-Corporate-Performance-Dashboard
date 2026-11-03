@@ -1,0 +1,16 @@
+{
+  "name": "Northstar Workforce",
+  "dataColors": [
+    "#00A6A6",
+    "#F0A44B",
+    "#5277A5",
+    "#8B6CB2",
+    "#D96C75",
+    "#3F9277",
+    "#64748B",
+    "#E5C454"
+  ],
+  "background": "#F4F7FB",
+  "foreground": "#142D4E",
+  "tableAccent": "#00A6A6"
+}
